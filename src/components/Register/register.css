@@ -1,0 +1,61 @@
+.register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+a {
+    color: rgb(5, 5, 67);
+    text-decoration: none;
+    opacity: .75;
+}
+
+a:hover {
+    color: rgb(5, 5, 67);
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.signup-card {
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+}
+
+.signup-card {
+    overflow: hidden;
+}
+
+.signup-card:before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    background-color: #ff6b6b;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.signup h5 {
+    color: rgb(5, 5, 67);
+}
+
+.ant-input-affix-wrapper>input.ant-input {
+    padding: 10px;
+}
+
+.signup-form-button {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(5, 5, 67);
+    color: #fff;
+
+}
+
+.signup-form-button:hover {
+    background-color: rgb(5, 5, 67);
+    opacity: 0.75;
+}

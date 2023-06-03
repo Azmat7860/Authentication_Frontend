@@ -7,39 +7,39 @@ import "./resetPassword.css";
 import axios from "axios";
 
 const ResetPassword = () => {
-  
   const navigate = useNavigate();
   const [form] = Form.useForm();
 
   const onFinish = (values) => {
     console.log("Received values of form: ", values);
     let config = {
-      method: 'post',
+      method: "post",
       maxBodyLength: Infinity,
-      url: 'http://localhost:2022/auth/update-password',
-      headers: { 
-        'Content-Type': 'application/json', 
-        'Authorization': `"Bearer ${localStorage.getItem('token')}`,
+      url: "http://localhost:2022/auth/update-password",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `"Bearer ${localStorage.getItem("token")}`,
       },
-      data : values
+      data: values,
     };
-    
-    axios.request(config)
-    .then((response) => {
-      console.log(JSON.stringify(response.data));
-      notification["success"]({
-        message: "Password Reset Successfully",
-        duration: 3,
+
+    axios
+      .request(config)
+      .then((response) => {
+        console.log(JSON.stringify(response.data));
+        notification["success"]({
+          message: "Password Reset Successfully",
+          duration: 3,
+        });
+        navigate("/success-message");
+      })
+      .catch((error) => {
+        console.log(error);
+        notification["error"]({
+          message: "Password is Incorrect",
+          duration: 3,
+        });
       });
-      navigate("/success-message");
-    })
-    .catch((error) => {
-      console.log(error);
-      notification["error"]({
-        message: "Password is Incorrect",
-        duration: 3,
-      });
-    });
   };
   return (
     <div className="reset-password">
@@ -84,32 +84,6 @@ const ResetPassword = () => {
                 placeholder="New Password"
               />
             </Form.Item>
-            {/* <Form.Item
-              name="new_password"
-              dependencies={["password"]}
-              hasFeedback
-              rules={[
-                {
-                  required: true,
-                  message: "Please confirm your password!",
-                },
-                ({ getFieldValue }) => ({
-                  validator(_, value) {
-                    if (!value || getFieldValue("password") === value) {
-                      return Promise.resolve();
-                    }
-                    return Promise.reject(
-                      new Error("Confirm Password does not match")
-                    );
-                  },
-                }),
-              ]}
-            >
-              <Input.Password
-                prefix={<LockOutlined className="site-form-item-icon" />}
-                placeholder="Confirm Password"
-              />
-            </Form.Item> */}
             <Form.Item className="d-flex justify-content-end">
               Already have an account?&nbsp;
               <Link className="login-form-forgot" to="/login">
@@ -117,10 +91,7 @@ const ResetPassword = () => {
               </Link>
             </Form.Item>
             <Form.Item>
-              <Button
-                htmlType="submit"
-                className="reset-password-form-button"
-              >
+              <Button htmlType="submit" className="reset-password-form-button">
                 Reset
               </Button>
             </Form.Item>

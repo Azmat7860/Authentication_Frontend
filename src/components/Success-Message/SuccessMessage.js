@@ -1,7 +1,7 @@
 import { Button, Card, Result } from "antd";
 import React from "react";
 import { Link } from "react-router-dom";
-import './successMessage.css'
+import "./successMessage.css";
 
 const SuccessMessage = () => {
   return (

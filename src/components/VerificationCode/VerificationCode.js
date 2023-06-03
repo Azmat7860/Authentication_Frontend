@@ -5,7 +5,6 @@ import { useNavigate } from "react-router";
 import "./verificationCode.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
-// import axios from "axios";
 
 const VerificationCode = () => {
   const navigate = useNavigate();
@@ -28,17 +27,17 @@ const VerificationCode = () => {
       .then((response) => {
         console.log(JSON.stringify(response.data));
         notification["success"]({
-            message: "Email Verified Successfully!",
-            duration: 3,
-          });
+          message: "Email Verified Successfully!",
+          duration: 3,
+        });
         navigate("/reset-password");
       })
       .catch((error) => {
         console.log(error);
         notification["error"]({
-            message: "Email not verified!",
-            duration: 3,
-          });
+          message: "Email not verified!",
+          duration: 3,
+        });
       });
   };
 

@@ -11,10 +11,6 @@ const Profile = () => {
             <span className="text-danger">{localStorage.getItem("users")}</span>
           </h2>
         </div>
-        {/* <div className="p-2 flex-shrink-1">
-          <Logout />
-          <Button className="btn btn-danger" onClick={()=>{navigate('/login')}}>Login</Button>
-        </div> */}
       </div>
     </div>
   )

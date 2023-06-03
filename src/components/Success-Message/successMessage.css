@@ -1,0 +1,30 @@
+.success-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.success-message-card {
+    position: relative;
+    overflow: hidden;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(130deg, rgba(2, 0, 36, 1) 25%, rgba(255, 255, 255, 1) 25%, rgb(255, 255, 255) 100%);
+}
+
+.success-message-button{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(5, 5, 67);
+    color: #fff;
+
+}
+
+.success-message-button a:hover {
+    background-color: rgb(5, 5, 67);
+    opacity: 0.75;
+    color: #fff;
+    text-decoration: none;
+}

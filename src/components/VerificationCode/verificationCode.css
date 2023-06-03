@@ -1,4 +1,4 @@
-.reset-password {
+.verification {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,41 +18,41 @@ a:hover {
     font-weight: 600;
 }
 
-.reset-password-card {
+.verification-card {
     box-shadow: 0 0 10px rgba(0, 0, 0, .1);
 }
 
-.reset-password-card {
+.verification-card {
     position: relative;
     overflow: hidden;
     background: rgb(2, 0, 36);
-    background: linear-gradient(120deg, rgba(2, 0, 36, 1) 25%, rgba(255, 255, 255, 1) 25%, rgb(255, 255, 255) 100%);
+    background: linear-gradient(135deg, rgba(2, 0, 36, 1) 25%, rgba(255, 255, 255, 1) 25%, rgb(255, 255, 255) 100%);
 }
 
-.reset-password-form {
-    margin-left: 12rem;
+.verification-form {
+    margin-left: 10.5rem;
+    margin-right: 3rem;
 }
 
-.reset-password h5{
+.verification-code h5 {
     color: rgb(5, 5, 67);
-    margin-left: 12rem;
+    margin-left: 10rem;
 }
 
-.reset-password p{
-    color: rgb(5, 5, 67);
-    margin-left: 12rem;
+.ant-input-affix-wrapper>input.ant-input {
+    padding: 10px;
 }
 
-.reset-password-form-button {
-    background-color: rgb(5, 5, 67);
-    color: #fff;
+.verification-form-button {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    background-color: rgb(5, 5, 67);
+    color: #fff;
 
 }
 
-.reset-password-form-button:hover {
+.verification-form-button:hover {
     background-color: rgb(5, 5, 67);
     opacity: 0.75;
 }

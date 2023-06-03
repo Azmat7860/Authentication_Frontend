@@ -16,6 +16,23 @@ a {
     box-shadow: 0 0 10px rgba(0, 0, 0, .1);
 }
 
+.login-card {
+    position: relative;
+    overflow: hidden;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(123deg, rgba(2, 0, 36, 1) 25%, rgba(255, 255, 255, 1) 25%, rgb(255, 255, 255) 100%);
+}
+
+.login-form {
+    margin-left: 12rem;
+}
+
+.login h5 {
+    color: rgb(5, 5, 67);
+    margin-left: 12rem;
+}
+
+
 a:hover {
     color: rgb(5, 5, 67);
     text-decoration: underline;

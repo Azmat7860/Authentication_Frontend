@@ -2,12 +2,35 @@ import React from "react";
 import { MailOutlined } from "@ant-design/icons";
 import { Button, Card, Form, Input } from "antd";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router";
 import './forgetPassword.css'
+import axios from "axios";
 
 const ForgetPassword = () => {
+  const navigate = useNavigate();
+
   const onFinish = (values) => {
     console.log("Received values of form: ", values);
+    let config = {
+      method: 'post',
+      maxBodyLength: Infinity,
+      url: 'http://localhost:2022/auth/forget-password',
+      headers: { 
+        'Content-Type': 'application/json'
+      },
+      data : values
+    };
+    
+    axios.request(config)
+    .then((response) => {
+      console.log(JSON.stringify(response.data));
+      navigate('/verification-code')
+    })
+    .catch((error) => {
+      console.log(error);
+    });
   };
+
   return (
     <div className="forget-password">
       <Card
@@ -48,7 +71,7 @@ const ForgetPassword = () => {
                 Submit
               </Button>
             </Form.Item>
-            Don't have an account? <Link to="/">Signup</Link>
+            Don't have an account? <Link to="/register">Signup</Link>
           </Form>
         </div>
       </Card>
